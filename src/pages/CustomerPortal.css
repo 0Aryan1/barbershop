@@ -1,0 +1,54 @@
+/* Customer Portal Styles */
+.customer-portal {
+  min-height: 100vh;
+  padding: var(--space-xl) 0;
+  background: linear-gradient(135deg, 
+    rgba(37, 99, 235, 0.02) 0%, 
+    rgba(124, 58, 237, 0.02) 100%);
+}
+
+.customer-portal .page-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.customer-portal .page-title {
+  font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-lg);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.customer-portal .page-subtitle {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: var(--leading-relaxed);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .customer-portal {
+    padding: var(--space-lg) 0;
+  }
+  
+  .customer-portal .page-header {
+    margin-bottom: var(--space-xl);
+  }
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .customer-portal {
+  background: linear-gradient(135deg, 
+    rgba(37, 99, 235, 0.05) 0%, 
+    rgba(124, 58, 237, 0.05) 100%);
+}
+
+/* Animation */
+.customer-portal .page-header {
+  animation: fadeInUp 0.6s ease-out;
+}
