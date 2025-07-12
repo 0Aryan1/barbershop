@@ -1,5 +1,5 @@
 // Common utility functions
-import { format, addMinutes, isAfter, isBefore, parseISO, differenceInMinutes } from 'date-fns';
+import { format, addMinutes, parseISO } from 'date-fns';
 
 // Time and date utilities
 export const formatTime = (date) => {
@@ -120,7 +120,7 @@ export const isValidEmail = (email) => {
 };
 
 export const isValidPhone = (phone) => {
-  const phoneRegex = /^\+?[\d\s\-\(\)]+$/;
+  const phoneRegex = /^\+?[\d\s\-()]+$/;
   return phoneRegex.test(phone) && phone.replace(/\D/g, '').length >= 10;
 };
 

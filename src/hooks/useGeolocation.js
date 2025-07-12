@@ -1,5 +1,5 @@
 // Custom hook for geolocation services
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { DEFAULT_LOCATION } from '../utils/constants';
 import { calculateDistance } from '../utils/helpers';
 import storageService from '../services/storageService';
@@ -10,12 +10,12 @@ export const useGeolocation = (options = {}) => {
   const [error, setError] = useState(null);
   const [supported, setSupported] = useState(false);
 
-  const defaultOptions = {
+  const defaultOptions = useMemo(() => ({
     enableHighAccuracy: true,
     timeout: 10000,
     maximumAge: 5 * 60 * 1000, // 5 minutes
     ...options,
-  };
+  }), [options]);
 
   // Check if geolocation is supported
   useEffect(() => {
